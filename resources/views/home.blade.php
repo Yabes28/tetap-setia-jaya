@@ -42,8 +42,7 @@
 
 <!-- SECTION SERVICES -->
 <section id="services" class="relative py-20 bg-white overflow-hidden reveal-section">
-    <div class="absolute inset-0 bg-[url('/images/brick-wall.svg')] bg-repeat bg-[length:80px_80px] opacity-5"></div>
-    <div class="relative z-10 text-center mb-10 px-4">
+        <div class="relative z-10 text-center mb-10 px-4">
         <p class="text-primary font-semibold mb-2">Mengapa Memilih Kami</p>
         <h2 class="text-2xl md:text-4xl font-bold text-extradark mb-4">
             Tentang PT. TETAP SETIA JAYA
@@ -80,8 +79,6 @@
 
 <!-- SECTION PRODUCTS -->
 <section id="products" class="py-20 bg-gradient-to-br from-[#266CA9] to-[#0F2573] text-white relative overflow-hidden">
-
-    <div class="absolute inset-0 bg-[url('/images/brick-wall.svg')] bg-repeat bg-[length:80px_80px] opacity-5"></div>
 
     <div class="relative text-center mb-12 px-4">
         <p class="text-lightblue font-semibold mb-2">Produk Kami</p>
