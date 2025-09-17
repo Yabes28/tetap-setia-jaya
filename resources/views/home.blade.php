@@ -91,7 +91,7 @@
 
         <!-- Industrial Chemicals -->
         <a href="{{ url('/products/papper') }}" class="product-card slide-in-left bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/industrial.jpg" alt="Industrial Chemicals" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/industrial.jpg') }}" alt="Industrial Chemicals" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Papper & Pulp </h3>
             <p class="text-sm text-gray-600 mb-4">Produk kimia khusus untuk industri kertas dan pulp berkualitas.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
@@ -99,7 +99,7 @@
 
         <!-- Fertilizer Chemicals -->
         <a href="{{ url('/products/fertilizer') }}" class="product-card slide-in-right bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/fertilizer.jpg" alt="Fertilizer Chemicals" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/fertilizer.jpg') }}" alt="Fertilizer Chemicals" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Fertilizer Chemicals</h3>
             <p class="text-sm text-gray-600 mb-4">Bahan kimia untuk industri pupuk berkualitas tinggi.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
@@ -107,7 +107,7 @@
 
         <!-- Cosmetic & Personal Care -->
         <a href="{{ url('/products/cosmetic') }}" class="product-card slide-in-left bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/cosmetic.jpg" alt="Cosmetic & Personal Care" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/cosmetic.jpg') }}" alt="Cosmetic & Personal Care" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Cosmetic & Personal Care</h3>
             <p class="text-sm text-gray-600 mb-4">Bahan kimia pilihan untuk industri kosmetik dan perawatan tubuh.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
@@ -115,7 +115,7 @@
 
         <!-- Water Treatment -->
         <a href="{{ url('/products/water') }}" class="product-card slide-in-right bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/water.jpg" alt="Water Treatment" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/water.jpg') }}" alt="Water Treatment" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Water Treatment</h3>
             <p class="text-sm text-gray-600 mb-4">Solusi bahan kimia untuk pengolahan air bersih dan limbah.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
@@ -123,7 +123,7 @@
 
         <!-- Rubber & Gold -->
         <a href="{{ url('/products/rubber') }}" class="product-card slide-in-left bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/rubber.jpg" alt="Rubber & Gold" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/rubber.jpg') }}" alt="Rubber & Gold" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Rubber & Gold</h3>
             <p class="text-sm text-gray-600 mb-4">Bahan kimia khusus industri karet dan pengolahan emas.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
@@ -131,7 +131,7 @@
 
         <!-- Food & Beverage -->
         <a href="{{ url('/products/food') }}" class="product-card slide-in-right bg-white text-[#0F2573] rounded-xl p-6 shadow-lg border-b-4 border-primary hover:scale-105 transition transform duration-300 hover:border-green-400 cursor-pointer overflow-hidden">
-            <img src="/images/food.jpg" alt="Food & Beverage" class="h-48 w-full object-cover rounded mb-4">
+            <img src="{{ asset('images/food.jpg') }}" alt="Food & Beverage" class="h-48 w-full object-cover rounded mb-4">
             <h3 class="font-bold text-xl mb-2">Food & Beverage</h3>
             <p class="text-sm text-gray-600 mb-4">Bahan kimia food grade untuk industri makanan dan minuman.</p>
             <span class="text-primary font-semibold hover:underline">Read More →</span>
