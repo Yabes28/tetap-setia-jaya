@@ -14,7 +14,6 @@
 
 <!-- SERVICES SECTION -->
 <section class="relative py-20 bg-gray-50 overflow-hidden animate-services">
-    <div class="absolute inset-0 bg-[url('/images/floating-cogs.svg')] bg-repeat opacity-5"></div>
     <div class="relative z-10">
         <div class="text-center mb-12 px-4">
             <h2 class="text-3xl font-bold text-darkblue mb-4">Layanan Unggulan Kami</h2>
@@ -42,7 +41,6 @@
 
 <!-- CTA SECTION -->
 <section class="animate-cta relative py-20 bg-gradient-to-br from-[#266CA9] to-[#0F2573] text-white text-center overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/images/floating-cogs.svg')] bg-contain bg-right opacity-10"></div>
     <div class="relative z-10 px-4">
         <h2 class="text-3xl font-bold mb-4">Percayakan Solusi Kimia Industri Anda pada Kami</h2>
         <p class="max-w-xl mx-auto mb-6">

@@ -4,7 +4,6 @@
 
 <!-- ABOUT BANNER -->
 <section class="relative bg-gradient-to-r from-primary to-darkblue py-24 text-center text-white overflow-hidden animate-banner">
-    <div class="absolute inset-0 bg-[url('/images/line-in-motion.svg')] bg-repeat opacity-5"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4">
         <h1 class="text-4xl font-bold mb-4">Tentang PT. TETAP SETIA JAYA</h1>
         <p class="text-lg font-light">
