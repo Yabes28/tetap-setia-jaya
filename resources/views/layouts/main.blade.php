@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PT. TETAP SETIA JAYA</title>
     <meta name="description" content="PT. TETAP SETIA JAYA – Trusted industrial chemical supplier in Indonesia.">
+    <meta name="google-site-verification" content="zOp7dMEjL1Js0bpSIUzfjneloosd2-Oq94_tWsd">
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
     <meta property="og:title" content="PT. TETAP SETIA JAYA">
     <meta property="og:description" content="Trusted industrial chemical supplier in Indonesia.">
@@ -67,6 +68,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .body-lock {
+            overflow: hidden;
+        }
 
     </style>
 </head>
@@ -80,52 +84,107 @@
     <div></div>
 </div>
 
-<!-- HEADER -->
-<header id="mainHeader" class="fixed w-full z-50 transition duration-300 ease-in-out bg-transparent">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-        <div class="flex items-center space-x-4">
-            <img src="{{ asset('images/logo_tsj.png') }}" alt="Logo PT. Tetap Setia Jaya" class="w-20 h-20 logo-scroll-effect transition-transform">
-            <span class="font-bold text-lg text-white">PT. TETAP SETIA JAYA</span>
+<!-- HEADER (responsive, clean) -->
+    <header id="mainHeader" class="fixed inset-x-0 top-0 z-50 bg-transparent transition-colors duration-300">
+    <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+        <!-- Logo + Brand -->
+        <a href="{{ url('/') }}" class="flex items-center gap-3">
+        <img src="{{ asset('images/logo_tsj.png') }}" alt="Logo PT. Tetap Setia Jaya"
+            class="h-14 w-14 object-contain transition-transform duration-300 logo-scroll-effect">
+        <span class="block font-extrabold tracking-wide text-white text-sm sm:text-base md:text-lg max-w-[45vw] truncate">
+            PT. TETAP SETIA JAYA
+        </span>
+    </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6 font-semibold text-white text-sm">
+        <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'text-lightblue border-b-2 border-lightblue pb-1' : 'hover:text-lightblue' }}">Beranda</a>
+        <a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'text-lightblue border-b-2 border-lightblue pb-1' : 'hover:text-lightblue' }}">Tentang Kami</a>
+
+        <!-- Products (hover dropdown on desktop) -->
+        <div class="relative group">
+            <button class="inline-flex items-center hover:text-lightblue">
+            Produk
+            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+            </svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white p-2 shadow-lg ring-1 ring-black/5
+                        opacity-0 pointer-events-none translate-y-1 transition
+                        group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
+            <a href="{{ url('/products') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Semua Produk</a>
+            <a href="{{ url('/products/fertilizer') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Fertilizer Chemicals</a>
+            <a href="{{ url('/products/water') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Water Treatment</a>
+            <a href="{{ url('/products/rubber') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Rubber &amp; Gold</a>
+            <a href="{{ url('/products/papper') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Papper &amp; Pulp</a>
+            <a href="{{ url('/products/cosmetic') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Cosmetic &amp; Personal Care</a>
+            <a href="{{ url('/products/food') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Food &amp; Beverage</a>
+            </div>
         </div>
 
-        <!-- Tombol Hamburger -->
-        <button id="menu-button" class="block md:hidden text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <a href="{{ url('/contact') }}" class="rounded-lg bg-lightblue px-4 py-2 font-bold text-primary hover:bg-white transition">Kontak Kami</a>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button id="menu-button" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md text-white ring-1 ring-white/20"
+                aria-expanded="false" aria-controls="mobile-panel">
+        <!-- icon hamburger -->
+        <svg id="icon-open" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <!-- icon close -->
+        <svg id="icon-close" class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        </button>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0 z-40 hidden bg-black/50"></div>
+
+    <!-- Mobile Slide Panel -->
+    <div id="mobile-panel"
+        class="fixed top-0 right-0 z-50 hidden h-full w-80 max-w-[86%] translate-x-full bg-primary text-white shadow-xl transition-transform">
+        <div class="flex items-center justify-between px-4 py-4 border-b border-white/10">
+        <span class="font-bold">Menu</span>
+        <button id="close-panel" class="h-9 w-9 inline-flex items-center justify-center rounded-md ring-1 ring-white/20">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </button>
+        </div>
 
-        <!-- Menu Navigasi Utama -->
-        <nav id="menu-nav" class="hidden md:flex flex-col md:flex-row absolute md:static top-20 left-0 w-full md:w-auto bg-primary md:bg-transparent font-semibold text-white text-sm space-y-2 md:space-y-0 md:space-x-6 px-4 md:px-0 py-4 md:py-0">
-            <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'text-lightblue font-bold border-b-2 border-lightblue' : 'hover:text-lightblue' }}">Beranda</a>
-            <a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'text-lightblue font-bold border-b-2 border-lightblue' : 'hover:text-lightblue' }}">Tentang Kami</a>
-            <!-- <a href="{{ url('/services') }}" class="{{ Request::is('services') ? 'text-lightblue font-bold border-b-2 border-lightblue' : 'hover:text-lightblue' }}">Layanan</a> -->
-            <div class="relative">
-                <button id="products-button" class="hover:text-lightblue flex items-center">
-                    Produk
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
-                    </svg>
-                </button>
+        <nav class="px-4 py-3 space-y-1 text-sm font-semibold">
+        <a href="{{ url('/') }}" class="block rounded-md px-3 py-2 hover:bg-white/10">Beranda</a>
+        <a href="{{ url('/about') }}" class="block rounded-md px-3 py-2 hover:bg-white/10">Tentang Kami</a>
 
-                <!-- Dropdown Produk -->
-                <div id="products-dropdown" class="absolute hidden bg-white text-superdark shadow-lg rounded-lg mt-2 z-50 min-w-[200px] transition-opacity duration-300 opacity-0 group-hover:block">
-                    <a href="{{ url('/products') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors border-b font-semibold">Semua Produk</a>
-                    <a href="{{ url('/products/fertilizer') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Fertilizer Chemicals</a>
-                    <a href="{{ url('/products/water') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Water Treatment</a>
-                    <a href="{{ url('/products/rubber') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Rubber & Gold</a>
-                    <a href="{{ url('/products/papper') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Papper & Pulp</a>
-                    <a href="{{ url('/products/cosmetic') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Cosmetic & Personal Care</a>
-                    <a href="{{ url('/products/food') }}" class="block px-4 py-2 hover:bg-primary hover:text-white transition-colors">Food & Beverage</a>
-                </div>
+        <!-- Produk (accordion mobile) -->
+        <details id="mobile-products" class="group rounded-md">
+            <summary class="list-none flex items-center justify-between rounded-md px-3 py-2 hover:bg-white/10 cursor-pointer">
+            <span>Produk</span>
+            <svg class="h-4 w-4 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
+            </svg>
+            </summary>
+            <div class="mt-1 space-y-1 pl-3">
+            <a href="{{ url('/products') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Semua Produk</a>
+            <a href="{{ url('/products/fertilizer') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Fertilizer Chemicals</a>
+            <a href="{{ url('/products/water') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Water Treatment</a>
+            <a href="{{ url('/products/rubber') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Rubber &amp; Gold</a>
+            <a href="{{ url('/products/papper') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Papper &amp; Pulp</a>
+            <a href="{{ url('/products/cosmetic') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Cosmetic &amp; Personal Care</a>
+            <a href="{{ url('/products/food') }}" class="block rounded-md px-3 py-2 text-white/90 hover:bg-white/10">Food &amp; Beverage</a>
             </div>
+        </details>
 
-            <a href="{{ url('/contact') }}" class="bg-lightblue hover:bg-white text-primary font-bold px-4 py-2 rounded-lg transition">
-                Kontak Kami
-            </a>
+        <a href="{{ url('/contact') }}" class="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-lightblue px-4 py-2 font-bold text-primary hover:bg-white transition">Kontak Kami</a>
         </nav>
     </div>
-</header>
+    </header>
+
 
 <div>
     @yield('content')
@@ -143,7 +202,7 @@
                 SPARE PART & SERVICES
             </p>
             <p class="leading-relaxed">
-                Berdiri tahun 2021 sebagai kelanjutan dari CV. Setia Jaya (2017). Kami adalah penyedia bahan kimia industri terpercaya di Indonesia.
+                Berdiri tahun 2021 sebagai kelanjutan dari CV. Setia Jaya (2007). Kami adalah penyedia bahan kimia industri terpercaya di Indonesia.
             </p>
         </div>
 
@@ -236,115 +295,102 @@
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="hidden fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg z-50 md:block">↑</button>
 
 <script>
-    const header = document.getElementById('mainHeader');
-    const logo = document.querySelector('.logo-scroll-effect');
-    const menuButton = document.getElementById('menu-button');
-    const menuNav = document.getElementById('menu-nav');
-    const overlay = document.getElementById('page-overlay');
-    const productsBtn = document.getElementById('products-button');
-    const productsDropdown = document.getElementById('products-dropdown');
+  const header = document.getElementById('mainHeader');
+  const logo = document.querySelector('.logo-scroll-effect');
 
-    // Sticky Header Effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('bg-primary');
-            header.classList.remove('bg-transparent');
-            logo.classList.add('scale-110');
-        } else {
-            header.classList.remove('bg-primary');
-            header.classList.add('bg-transparent');
-            logo.classList.remove('scale-110');
-        }
+  // Sticky Header Effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('bg-primary');
+      header.classList.remove('bg-transparent');
+      logo?.classList.add('scale-110');
+    } else {
+      header.classList.remove('bg-primary');
+      header.classList.add('bg-transparent');
+      logo?.classList.remove('scale-110');
+    }
+  });
+
+  // ===== Mobile panel toggle =====
+  const menuBtn = document.getElementById('menu-button');
+  const panel = document.getElementById('mobile-panel');
+  const closePanel = document.getElementById('close-panel');
+  const backdrop = document.getElementById('backdrop');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  function openMenu() {
+    panel.classList.remove('hidden');
+    backdrop.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      panel.classList.remove('translate-x-full');
     });
+    document.body.classList.add('body-lock');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+  }
 
-    // Mobile Menu Toggle
-    menuButton?.addEventListener('click', () => {
-        menuNav?.classList.toggle('hidden');
+  function closeMenu() {
+    panel.classList.add('translate-x-full');
+    backdrop.classList.add('hidden');
+    document.body.classList.remove('body-lock');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    // sembunyikan panel setelah animasi
+    setTimeout(() => panel.classList.add('hidden'), 250);
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    expanded ? closeMenu() : openMenu();
+  });
+
+  closePanel?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  // Tutup panel saat klik link di dalam panel
+  panel?.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (a && !a.target) closeMenu();
+  });
+
+  // ===== Page Transition Overlay milikmu (biarkan) =====
+  const overlay = document.getElementById('page-overlay');
+  window.addEventListener('load', () => {
+    overlay.classList.add('active');
+    gsap.fromTo(
+      overlay,
+      { opacity: 1 },
+      { opacity: 0, duration: 0.5, ease: "power2.out", onComplete: () => overlay.classList.remove('active') }
+    );
+  });
+
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('#') || href.startsWith('mailto:') || link.hasAttribute('target')) return;
+    // kalau panel terbuka dan klik link, biarkan closeMenu() yang handle
+    if (panel && !panel.classList.contains('hidden') && panel.contains(link)) return;
+
+    e.preventDefault();
+    overlay.classList.add('active');
+    gsap.to(overlay, {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.inOut",
+      onComplete: () => { window.location = href; }
     });
+  });
 
-    // Page Transition on Load
-    window.addEventListener('load', () => {
-        overlay.classList.add('active');
-        gsap.fromTo(
-            overlay,
-            { opacity: 1 },
-            {
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.out",
-                onComplete: () => overlay.classList.remove('active'),
-            }
-        );
-    });
-
-    // Page Transition on Link Click (Global Delegation)
-    document.addEventListener('click', function (e) {
-        const link = e.target.closest('a[href]');
-        if (!link) return;
-
-        const href = link.getAttribute('href');
-        if (
-            href.startsWith('#') ||
-            href.startsWith('mailto:') ||
-            link.hasAttribute('target')
-        ) {
-            return; // Skip anchor, email, or target="_blank"
-        }
-
-        e.preventDefault();
-        overlay.classList.add('active');
-
-        gsap.to(overlay, {
-            opacity: 1,
-            duration: 0.4,
-            ease: "power2.inOut",
-            onComplete: () => {
-                window.location = href;
-            }
-        });
-    });
-
-    // Perbaiki tombol back: reload jika halaman kembali dari cache
-    window.addEventListener('pageshow', function (event) {
-        if (event.persisted) {
-            console.log("Halaman kembali dari cache, melakukan reload...");
-            window.location.reload();
-        }
-    });
-
-    // Dropdown Produk Manual Toggle
-    let dropdownOpen = false;
-
-    productsBtn?.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdownOpen = !dropdownOpen;
-        if (dropdownOpen) {
-            productsDropdown.classList.remove('hidden');
-            setTimeout(() => {
-                productsDropdown.classList.add('opacity-100', 'scale-100');
-                productsDropdown.classList.remove('opacity-0', 'scale-95');
-            }, 10);
-        } else {
-            productsDropdown.classList.remove('opacity-100', 'scale-100');
-            productsDropdown.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => {
-                productsDropdown.classList.add('hidden');
-            }, 200);
-        }
-    });
-
-    // Klik luar untuk menutup dropdown
-    document.addEventListener('click', function (e) {
-        if (dropdownOpen && !productsDropdown.contains(e.target) && !productsBtn.contains(e.target)) {
-            dropdownOpen = false;
-            productsDropdown.classList.remove('opacity-100', 'scale-100');
-            productsDropdown.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => {
-                productsDropdown.classList.add('hidden');
-            }, 200);
-        }
-    });
+  // Fix back-forward cache di iOS/Safari
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) window.location.reload();
+  });
 </script>
+
 
 </body>
 </html>
