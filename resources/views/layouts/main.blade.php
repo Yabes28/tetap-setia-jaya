@@ -92,9 +92,9 @@
         <img src="{{ asset('images/logo_tsj.png') }}" alt="Logo PT. Tetap Setia Jaya"
             class="h-14 w-14 object-contain transition-transform duration-300 logo-scroll-effect">
         <span class="block font-extrabold tracking-wide text-white text-sm sm:text-base md:text-lg max-w-[45vw] truncate">
-            PT. TETAP SETIA JAYA
+          PT. TETAP SETIA JAYA
         </span>
-    </a>
+        </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-6 font-semibold text-white text-sm">
@@ -102,23 +102,26 @@
         <a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'text-lightblue border-b-2 border-lightblue pb-1' : 'hover:text-lightblue' }}">Tentang Kami</a>
 
         <!-- Products (hover dropdown on desktop) -->
-        <div class="relative group">
-            <button class="inline-flex items-center hover:text-lightblue">
-            Produk
-            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" />
-            </svg>
+        <div class="relative group focus-within:block">
+            <button class="inline-flex items-center hover:text-lightblue focus:outline-none">
+                Produk
+                <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" 
+                     viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" 
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" 
+                          clip-rule="evenodd" />
+                </svg>
             </button>
-            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white p-2 shadow-lg ring-1 ring-black/5
+            <div class="absolute right-0 mt-2 w-56 rounded-lg bg-white p-2 shadow-lg ring-1 ring-black/5 z-50
                         opacity-0 pointer-events-none translate-y-1 transition
-                        group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0">
-            <a href="{{ url('/products') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Semua Produk</a>
-            <a href="{{ url('/products/fertilizer') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Fertilizer Chemicals</a>
-            <a href="{{ url('/products/water') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Water Treatment</a>
-            <a href="{{ url('/products/rubber') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Rubber &amp; Gold</a>
-            <a href="{{ url('/products/papper') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Papper &amp; Pulp</a>
-            <a href="{{ url('/products/cosmetic') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Cosmetic &amp; Personal Care</a>
-            <a href="{{ url('/products/food') }}" class="block rounded-md px-3 py-2 text-sm hover:bg-primary/10">Food &amp; Beverage</a>
+                        group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0
+                        group-focus-within:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0">
+            <a href="{{ url('/products/fertilizer') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Fertilizer Chemicals</a>
+            <a href="{{ url('/products/water') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Water Treatment</a>
+            <a href="{{ url('/products/rubber') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Rubber &amp; Gold</a>
+            <a href="{{ url('/products/papper') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Papper &amp; Pulp</a>
+            <a href="{{ url('/products/cosmetic') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Cosmetic &amp; Personal Care</a>
+            <a href="{{ url('/products/food') }}" class="block rounded-md px-3 py-2 text-sm text-primary hover:bg-primary/10">Food &amp; Beverage</a>
             </div>
         </div>
 
